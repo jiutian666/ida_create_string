@@ -27,8 +27,8 @@ def del_items(ea,len):
     ida_bytes.del_items(ea, 0, len)
 
 def is_printable_ascii(byte_val):
-    """判断是否为可打印ASCII字符"""
-    return 0x20 <= byte_val <= 0x7E
+    """判断是否为可打印ASCII字符 or 扩展ASCII字符"""
+    return 0x20 <= byte_val <= 0x7E or 0x80 <= byte_val <= 0xff
 
 def find_string_boundary(start_ea, max_search=100000):
     """从start_ea开始，找到字符串的实际结束位置"""
